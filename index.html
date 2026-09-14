@@ -330,30 +330,41 @@ const BASE = 'https://sites.google.com/view/classroom6x/';
 // ─────────────────────────────────────────────────────────────────────────
 
 // Featured games — [name, url/slug, thumbnailURL, type]
+// ─────────────────────────────────────────────────────────────────────────
+//  CORE DATA REPOSITORIES (EXACT PROVIDED LINKS ONLY)
+// ─────────────────────────────────────────────────────────────────────────
+
+// Featured games — [name, url/slug, thumbnailURL]
 const FEATURED = [
-  ['Run 3', 'https://google.com', 'https://googleusercontent.com', 'direct'],
-  ['Smash Karts', 'https://script.google.com/macros/s/AKfycbwKesa6ChbgLAdva61eo59y8ERBaopur_WqFGuzAGwv_ENadMx2NnIyMZA8k2mSMAY/exec', 'https://googleusercontent.com', 'direct'],
-  ['Moto X3M', 'https://script.google.com/macros/s/AKfycbwFY57M0Ccu1T4oL-nQ0TuQBuDzNwli6omcVW8IYLbmYIbhVb33pjRyaf_QC4Q8GiNT/exec', 'https://googleusercontent.com', 'direct']
+  ['Run 3', 'https://n-rml3vtupmqkcyeh5r4n66wevgyo4yzbkezxprfa-0lu-script.googleusercontent.com/userCodeAppPanel']
 ];
 
-// All games — [display name, url/slug, type]
+// All games — [display name, url/slug]
 const ALL_GAMES = [
-  ['Smash Karts', 'https://script.google.com/macros/s/AKfycbwKesa6ChbgLAdva61eo59y8ERBaopur_WqFGuzAGwv_ENadMx2NnIyMZA8k2mSMAY/exec', 'direct'],
-  ['Moto X3M', 'https://script.google.com/macros/s/AKfycbwFY57M0Ccu1T4oL-nQ0TuQBuDzNwli6omcVW8IYLbmYIbhVb33pjRyaf_QC4Q8GiNT/exec', 'direct'],
-  ['Slope 2', 'https://script.google.com/macros/s/AKfycbx2OBzjQ_8DtRyLr7oQcM9ouzkjy8bBoXAA0uJjNVcc7hfnqhJzE2wUT2I9kcvI5qCz5g/exec', 'direct'],
-  ['Slope Tunnel', 'https://script.google.com/macros/s/AKfycbzGuEsTNq-05j8swCi9NYUftJjznijIwBxL6UVqDxIrFx3MVA32VLBoaQ/exec', 'direct'],
-  ['Smash Cars!', 'https://script.google.com/macros/s/AKfycbzDtgiSUGhyqnquJkWEygkh_m44a8Rrszb4ePq6JwpEQ-doCxU/exec', 'direct'],
-  ['Random Game (Multi-Game Menu Picker)', 'https://script.google.com/macros/s/AKfycbwZZOgON3MxKcDEcHF6M3_8La06CtNwEBNUO4S_kOnRn7P3z7TJ6YFwZdprKO8ryfSe/exec', 'direct'],
-  ['1Line', 'https://script.google.com/macros/s/AKfycbymhv9_9VPPdrMjknkqYZdCECd5lSY8upguxzv9QBW8KnPeAfOiRVhnsHjzZsKfIonU/exec', 'direct']
+  ['Smash carts', 'https://script.google.com/macros/s/AKfycbyE1C_kxeomVoOLjpaXc2uAI7JdNgVhdQdePTZu9Sizwzj_imhaWnNmPSXm4w1v-SFs/exec'],
+  ['Body drop 3d', 'https://script.google.com/macros/s/AKfycbyXOw6qzM51ssGj_M9IbqU2ecyQivgppEfFXnGRtWv2fa88YqEgVxfE1pA3x-Tf1jfxTA/exec'],
+  ['Bottle flip 3d', 'https://script.google.com/macros/s/AKfycbzwDflD6NVq9iPdEWsRyyI4iqR_k47P-BK4sn_vpYaZGsPJz3zDYRDy45azzYiPnYs/exec'],
+  ['Moto xm3', 'https://script.google.com/macros/s/AKfycbzv1h8PLdH7WouQ0T09hlcWifgJGTCYkrIKf1urYncfCcdm-F9sYZ4ex-U6Vp0tVHnI4g/exec'],
+  ['Car driving', 'https://script.google.com/macros/s/AKfycbzQlpr1tIkhRPz587329iVg2MEKG1JuFGIsqoiaxezladgDxbYHMpwNiIUTn_5T16w6/exec'],
+  ['Slope 2', 'https://script.google.com/macros/s/AKfycbx2OBzjQ_8DtRyLr7oQcM9ouzkjy8bBoXAA0uJjNVcc7hfnqhJzE2wUT2I9kcvI5qCz5g/exec'],
+  ['Aim trainer', 'https://Amtr.framer.website'],
+  ['Battle royal 2d', 'https://battleroyalai.netlify.app/'],
+  ['Poly track', 'https://smapskajendfjshwbekf-prog.github.io/newcargame/'],
+  ['Cars driving 3d', 'https://script.google.com/macros/s/AKfycbzQlpr1tIkhRPz587329iVg2MEKG1JuFGIsqoiaxezladgDxbYHMpwNiIUTn_5T16w6/exec'],
+  ['Tetris', 'https://tetris-game.framer.website/'],
+  ['Rocket goal', 'https://script.google.com/macros/s/AKfycbybZkVPGyvHUOZbwrJSn5fRQIFcGpoIEhp0r-yq2GWRtE_1G7YzP4t8kPZRfp6tutUN/exec'],
+  ['Snow rider', 'https://script.google.com/macros/s/AKfycbw5Z-Ryg_JfIIDYH7pzzPKXlr2tN0HCw-tT_ZvxBGDPsDDY41ewPVneVeLzelfpnBab/exec'],
+  ['Snake puzzle', 'https://script.google.com/macros/s/AKfycbymKWcUrgUql0KiwDqccDBMbYJB8_gxtlKCbQ5C6lfGB90kOJh4MpLqhMGWjtF7TyBskw/exec'],
+  ['Mellon dismounting', 'https://script.google.com/macros/s/AKfycbyZaztSZIRndFCVlGr8WpNLsFW_Hb-R0fowEvqGZxHPi33bSDqjTa4i0jlEnjiVbF-Z/exec'],
+  ['Mellon sandbox', 'https://script.google.com/macros/s/AKfycbygjC3zfZtvLnkZSdN0ZYEX2u1ZGEKeW6fP2y2SC0cJBvYVq7f_wZGbgbrFaq0iUhcNsA/exec']
 ];
-
 
 // ─────────────────────────────────────────────────────────────────────────
-//  LOOP RENDERERS
+//  LOOP RENDERERS WITH DIRECT ROUTING
 // ─────────────────────────────────────────────────────────────────────────
 const fg = document.getElementById('featuredGrid');
 
-FEATURED.forEach(([name, target, img, type]) => {
+FEATURED.forEach(([name, target, img]) => {
   const card = document.createElement('div');
   card.className = 'game-card';
   card.innerHTML = `
@@ -378,10 +389,10 @@ function buildAZ(games) {
   document.getElementById('noResults').style.display = 'none';
 
   const groups = {};
-  games.forEach(([name, target, type]) => {
-    const key = /^[A-Za-z]/.test(name) ? name[0].toUpperCase() : '#';
+  games.forEach(([name, target]) => {
+    const key = /^[A-Za-z]/.test(name) ? name.toUpperCase() : '#';
     if (!groups[key]) groups[key] = [];
-    groups[key].push([name, target, type]);
+    groups[key].push([name, target]);
   });
 
   Object.keys(groups).sort().forEach(letter => {
@@ -456,6 +467,5 @@ if (sidebarSearch) {
   });
 }
 </script>
-
-
-</body></html>
+</body>
+</html>
