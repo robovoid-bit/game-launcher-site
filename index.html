@@ -318,28 +318,6 @@ function openGame(url, name) {
 // ─────────────────────────────────────────────────────────────────────────
 const BASE = 'https://sites.google.com/view/classroom6x/';
 
-// Featured games — [name, slug, thumbnailURL]
-// ─────────────────────────────────────────────────────────────────────────
-//  CORE DATA REPOSITORIES (EMPTY & READY FOR YOUR LINKS)
-// ─────────────────────────────────────────────────────────────────────────
-
-// Featured games — [name, url/slug, thumbnailURL, type]
-// 'direct' means it uses a full external web link like your Google Script macro
-// ─────────────────────────────────────────────────────────────────────────
-//  CORE DATA REPOSITORIES (BATCH 1 INSTALLED)
-// ─────────────────────────────────────────────────────────────────────────
-
-// Featured games — [name, url/slug, thumbnailURL, type]
-// ─────────────────────────────────────────────────────────────────────────
-//  CORE DATA REPOSITORIES (EXACT PROVIDED LINKS ONLY)
-// ─────────────────────────────────────────────────────────────────────────
-
-// Featured games — [name, url/slug, thumbnailURL]
-
-// ─────────────────────────────────────────────────────────────────────────
-//  CORE DATA REPOSITORIES (EXACT PROVIDED LINKS ONLY)
-// ─────────────────────────────────────────────────────────────────────────
-
 // Featured game data [display name, game url, image url]
 const FEATURED = [
   ['Run 3', 'https://n-rml3vtupmqkcyeh5r4n66wevgyo4yzbkezxprfa-0lu-script.googleusercontent.com/userCodeAppPanel', 'https://googleusercontent.com']
@@ -353,11 +331,13 @@ const ALL_GAMES = [
   ['Bottle flip 3d', 'https://script.google.com/macros/s/AKfycbzwDflD6NVq9iPdEWsRyyI4iqR_k47P-BK4sn_vpYaZGsPJz3zDYRDy45azzYiPnYs/exec'],
   ['Car driving', 'https://script.google.com/macros/s/AKfycbzQlpr1tIkhRPz587329iVg2MEKG1JuFGIsqoiaxezladgDxbYHMpwNiIUTn_5T16w6/exec'],
   ['Cars driving 3d', 'https://script.google.com/macros/s/AKfycbzQlpr1tIkhRPz587329iVg2MEKG1JuFGIsqoiaxezladgDxbYHMpwNiIUTn_5T16w6/exec'],
+  ['Free rider 3', 'https://script.google.com/macros/s/AKfycbzglu7bAlCzkY1f7zPl84CsM0ddysxenJzVGRnNn-w3Lt1mQJNIiXViOwdO5Q4M4ztL/exec'],
   ['Mellon dismounting', 'https://script.google.com/macros/s/AKfycbyZaztSZIRndFCVlGr8WpNLsFW_Hb-R0fowEvqGZxHPi33bSDqjTa4i0jlEnjiVbF-Z/exec'],
   ['Mellon sandbox', 'https://script.google.com/macros/s/AKfycbygjC3zfZtvLnkZSdN0ZYEX2u1ZGEKeW6fP2y2SC0cJBvYVq7f_wZGbgbrFaq0iUhcNsA/exec'],
   ['Moto xm3', 'https://script.google.com/macros/s/AKfycbzv1h8PLdH7WouQ0T09hlcWifgJGTCYkrIKf1urYncfCcdm-F9sYZ4ex-U6Vp0tVHnI4g/exec'],
   ['Poly track', 'https://smapskajendfjshwbekf-prog.github.io/newcargame/'],
   ['Rocket goal', 'https://script.google.com/macros/s/AKfycbybZkVPGyvHUOZbwrJSn5fRQIFcGpoIEhp0r-yq2GWRtE_1G7YzP4t8kPZRfp6tutUN/exec'],
+  ['Run 3', 'https://n-rml3vtupmqkcyeh5r4n66wevgyo4yzbkezxprfa-0lu-script.googleusercontent.com/userCodeAppPanel'],
   ['Slope 2', 'https://script.google.com/macros/s/AKfycbx2OBzjQ_8DtRyLr7oQcM9ouzkjy8bBoXAA0uJjNVcc7hfnqhJzE2wUT2I9kcvI5qCz5g/exec'],
   ['Smash carts', 'https://script.google.com/macros/s/AKfycbyE1C_kxeomVoOLjpaXc2uAI7JdNgVhdQdePTZu9Sizwzj_imhaWnNmPSXm4w1v-SFs/exec'],
   ['Snake puzzle', 'https://script.google.com/macros/s/AKfycbymKWcUrgUql0KiwDqccDBMbYJB8_gxtlKCbQ5C6lfGB90kOJh4MpLqhMGWjtF7TyBskw/exec'],
@@ -366,7 +346,7 @@ const ALL_GAMES = [
   ['Tetris', 'https://tetris-game.framer.website/']
 ];
 
-// Fallback if openGame function is not defined anywhere else in your project
+// Fallback logic if openGame execution handler isn't defined inside your project yet
 if (typeof openGame !== 'function') {
   function openGame(url, name) {
     console.log(`Opening game: ${name}`);
@@ -413,7 +393,7 @@ function buildAZ(games) {
 
   const groups = {};
   games.forEach(([name, target]) => {
-    // FIX: Grabs the very first character instead of grouping by full names
+    // Corrected character extraction to group accurately under single letters
     const firstChar = name.trim().charAt(0);
     const key = /^[A-Za-z]/.test(firstChar) ? firstChar.toUpperCase() : '#';
     if (!groups[key]) groups[key] = [];
@@ -432,7 +412,6 @@ function buildAZ(games) {
     const grid = document.createElement('div');
     grid.className = 'az-grid';
     
-    // Sort names within the letter block cleanly
     groups[letter].sort((a, b) => a[0].localeCompare(b[0])).forEach(([name, target]) => {
       const a = document.createElement('div');
       a.className = 'az-link';
@@ -468,7 +447,7 @@ function buildSidebar(games) {
   });
 }
 
-// Initial Build
+// Initial script execution
 buildAZ(ALL_GAMES);
 buildSidebar(ALL_GAMES);
 
