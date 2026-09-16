@@ -1,487 +1,123 @@
-<html lang="en" crxlauncher-bridged="" crxlauncher=""><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Classroom 6x – Unblocked Games</title>
-<meta name="description" content="Homework done? Time for fun. Your ultimate after-school gaming hub. Safe, fun, and ready to play at Classroom 6x.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg:        #0d1f0a;
-    --surface:   #152b10;
-    --card:      #1a3514;
-    --card-hover:#22421a;
-    --accent:    #f1c232;
-    --accent2:   #60c030;
-    --text:      #f0f4ee;
-    --muted:     #9ab890;
-    --border:    #2a4f22;
-    --radius:    12px;
-  }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Comfortaa', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Buttons</title>
+    <style>
+        /* --------------------------------------------------
+           EDIT YOUR CHOICES HERE (COLORS, SIZES)
+        -------------------------------------------------- */
+        :root {
+            /* Background Card Settings */
+            --card-bg-color: #ffffff;       /* Background color of the card */
+            --card-width: 400px;           /* Width of the card */
+            --card-padding: 30px;          /* Inside spacing of the card */
+            --card-border-radius: 20px;    /* How rounded the card corners are */
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
 
-  /* ── HEADER ── */
-  header {
-    position: sticky; top: 0; z-index: 100;
-    background: linear-gradient(90deg, #0a1808, var(--surface));
-    border-bottom: 2px solid var(--border);
-    display: flex; align-items: center; gap: 16px;
-    padding: 0 24px; height: 60px;
-    box-shadow: 0 2px 16px rgba(0,0,0,.6);
-  }
-  .logo { font-size: 1.3rem; font-weight: 700; color: var(--accent); text-decoration: none; white-space: nowrap; cursor: pointer; }
-  .logo span { color: var(--text); }
-  .search-wrap { flex: 1; max-width: 460px; position: relative; }
-  .search-wrap input {
-    width: 100%; padding: 9px 40px 9px 16px;
-    border-radius: 24px; border: 2px solid var(--border);
-    background: rgba(255,255,255,.06); color: var(--text);
-    font-family: 'Comfortaa', sans-serif; font-size: .9rem; outline: none;
-    transition: border-color .2s;
-  }
-  .search-wrap input:focus { border-color: var(--accent); }
-  .search-wrap input::placeholder { color: var(--muted); }
-  .search-wrap svg { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; opacity: .5; }
-  nav.top-nav { display: flex; gap: 8px; margin-left: auto; }
-  nav.top-nav a {
-    color: var(--muted); text-decoration: none; font-size: .82rem; font-weight: 600;
-    padding: 6px 12px; border-radius: 20px; cursor: pointer; transition: background .2s, color .2s;
-  }
-  nav.top-nav a:hover { background: var(--card); color: var(--accent); }
+            /* Button 1 (Top Link Button) Settings */
+            --btn1-bg-color: #007bff;      /* Background color */
+            --btn1-text-color: #ffffff;    /* Text color */
+            --btn1-text-size: 16px;        /* Font size */
+            --btn1-border-radius: 12px;   /* How rounded the button corners are */
 
-  /* ── BANNER ── */
-  .banner {
-    background: linear-gradient(90deg, #2d5a1b, #3a7a22);
-    border-bottom: 1px solid #4a9a2a;
-    text-align: center; padding: 8px 16px;
-    font-size: .82rem; color: #d4f0c0;
-    font-family: 'Nunito', sans-serif;
-  }
+            /* Button 2 (Bottom Close Button) Settings */
+            --btn2-bg-color: #dc3545;      /* Background color */
+            --btn2-text-color: #ffffff;    /* Text color */
+            --btn2-text-size: 16px;        /* Font size */
+            --btn2-border-radius: 12px;   /* How rounded the button corners are */
 
-  /* ── HERO ── */
-  .hero {
-    text-align: center; padding: 60px 24px 40px;
-    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(96,192,48,.12) 0%, transparent 70%), var(--bg);
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: ''; position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2360c030' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-  .hero h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700;
-    color: var(--accent); text-shadow: 0 2px 20px rgba(241,194,50,.3);
-    margin-bottom: 12px; position: relative;
-  }
-  .hero p { font-size: 1.05rem; color: var(--muted); max-width: 520px; margin: 0 auto 28px; line-height: 1.6; }
-  .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-  .badge {
-    background: rgba(96,192,48,.12); border: 1px solid rgba(96,192,48,.3);
-    color: var(--accent2); padding: 6px 14px; border-radius: 20px;
-    font-size: .8rem; font-weight: 600; font-family: 'Nunito', sans-serif;
-  }
+            /* Outer Page Settings */
+            --page-bg-color: #f0f2f5;      /* Overall website background color */
+        }
 
-  /* ── LAYOUT ── */
-  .layout { display: flex; gap: 24px; max-width: 1400px; margin: 0 auto; padding: 24px 20px 48px; }
+        /* --------------------------------------------------
+           CORE LAYOUT STYLES (DO NOT NEED TO EDIT)
+        -------------------------------------------------- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  /* ── SIDEBAR ── */
-  aside { width: 240px; flex-shrink: 0; }
-  .sidebar-box {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden;
-    position: sticky; top: 80px; max-height: calc(100vh - 100px);
-  }
-  .sidebar-title {
-    background: linear-gradient(90deg, var(--card), var(--surface));
-    padding: 14px 16px; font-size: .85rem; font-weight: 700;
-    color: var(--accent); border-bottom: 1px solid var(--border); letter-spacing: .3px;
-  }
-  .sidebar-search { padding: 10px 12px; border-bottom: 1px solid var(--border); }
-  .sidebar-search input {
-    width: 100%; padding: 7px 12px; background: var(--bg);
-    border: 1px solid var(--border); border-radius: 8px;
-    color: var(--text); font-size: .8rem; font-family: 'Comfortaa', sans-serif; outline: none;
-  }
-  .sidebar-search input:focus { border-color: var(--accent); }
-  .sidebar-list {
-    overflow-y: auto; max-height: calc(100vh - 220px); padding: 6px 0;
-    scrollbar-width: thin; scrollbar-color: var(--border) transparent;
-  }
-  .sidebar-list a {
-    display: block; padding: 7px 16px; color: var(--muted); text-decoration: none;
-    font-size: .8rem; font-family: 'Nunito', sans-serif; cursor: pointer;
-    transition: background .15s, color .15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-  .sidebar-list a:hover { background: var(--card); color: var(--accent); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--page-bg-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-  /* ── MAIN ── */
-  main { flex: 1; min-width: 0; }
-  .section-title {
-    font-size: 1.1rem; font-weight: 700; color: var(--accent);
-    margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
-  }
-  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .container-card {
+            background-color: var(--card-bg-color);
+            width: 100%;
+            max-width: var(--card-width);
+            padding: var(--card-padding);
+            border-radius: var(--card-border-radius);
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Spacing between the buttons */
+            text-align: center;
+        }
 
-  /* ── FEATURED GRID ── */
-  .featured-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 16px; margin-bottom: 40px; }
-  .game-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-    overflow: hidden; text-decoration: none; color: var(--text); cursor: pointer;
-    transition: transform .2s, box-shadow .2s, border-color .2s;
-    display: flex; flex-direction: column;
-  }
-  .game-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,.6), 0 0 0 1px var(--accent); border-color: var(--accent); }
-  .game-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background: var(--surface); }
-  .game-card-body { padding: 10px 12px 12px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
-  .game-card-name { font-size: .82rem; font-weight: 700; line-height: 1.3; color: var(--text); font-family: 'Nunito', sans-serif; }
-  .game-card-play { margin-top: auto; font-size: .72rem; color: var(--accent); font-weight: 600; font-family: 'Nunito', sans-serif; }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
 
-  /* ── A-Z ── */
-  .az-section { margin-top: 8px; }
-  .letter-group { margin-bottom: 24px; }
-  .letter-heading {
-    font-size: 1rem; font-weight: 700; color: var(--accent);
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 8px; padding: 6px 14px; display: inline-block; margin-bottom: 10px;
-  }
-  .az-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
-  .az-link {
-    display: block; background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 9px 12px; color: var(--muted); text-decoration: none;
-    font-size: .78rem; font-family: 'Nunito', sans-serif; font-weight: 600; cursor: pointer;
-    transition: background .15s, color .15s, border-color .15s;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-  .az-link:hover { background: var(--card-hover); color: var(--text); border-color: var(--accent2); }
+        .btn:hover {
+            opacity: 0.9;
+        }
 
-  /* ── ABOUT ── */
-  .about-box {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 28px 32px; margin-top: 40px; line-height: 1.8;
-  }
-  .about-box h2 { color: var(--accent); font-size: 1.15rem; margin-bottom: 12px; }
-  .about-box p { color: var(--muted); font-size: .88rem; margin-bottom: 10px; }
-  .about-box strong { color: var(--text); }
+        .top-link-btn {
+            background-color: var(--btn1-bg-color);
+            color: var(--btn1-text-color);
+            font-size: var(--btn1-text-size);
+            border-radius: var(--btn1-border-radius);
+        }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--surface); border-top: 1px solid var(--border);
-    text-align: center; padding: 24px 16px;
-    font-size: .78rem; color: var(--muted); font-family: 'Nunito', sans-serif;
-  }
-  footer a { color: var(--accent); text-decoration: none; cursor: pointer; }
-  footer a:hover { text-decoration: underline; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 860px) { aside { display: none; } .featured-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } }
-  @media (max-width: 520px) { .hero { padding: 40px 16px 28px; } nav.top-nav { display: none; } .search-wrap { max-width: 100%; } }
-</style>
-<style></style></head>
+        .bottom-close-btn {
+            background-color: var(--btn2-bg-color);
+            color: var(--btn2-text-color);
+            font-size: var(--btn2-text-size);
+            border-radius: var(--btn2-border-radius);
+        }
+    </style>
+</head>
 <body>
 
-<header>
-  <span class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Classroom <span>6x</span></span>
-  <div class="search-wrap">
-    <input type="search" id="mainSearch" placeholder="Search games…" autocomplete="off" aria-label="Search games">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg>
-  </div>
-  <nav class="top-nav">
-    <a onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">Featured</a>
-    <a onclick="document.getElementById('all-games').scrollIntoView({behavior:'smooth'})">All Games</a>
-    <a onclick="openGame('https://sites.google.com/view/classroom6x/for-girls','For Girls')">For Girls</a>
-    <a onclick="openGame('https://sites.google.com/view/classroom6x/contact-us','Contact')">Contact</a>
-  </nav>
-</header>
+    <!-- THE BACKGROUND CARD -->
+    <div class="container-card">
 
+        <!-- TOP BUTTON: Takes you to the Rickroll link -->
+        <a href="https://youtu.be/dQw4w9WgXcQ?t=0" target="_blank" class="btn top-link-btn">
+            Click For A Surprise
+        </a>
 
+        <!-- BOTTOM BUTTON: Closes the site -->
+        <button onclick="closeWindow()" class="btn bottom-close-btn">
+            Close Site
+        </button>
 
-<div class="hero">
-  <h1>Unblocked Games</h1>
-  
-  
-</div>
-
-<div class="layout">
-  <aside>
-    <div class="sidebar-box">
-      <div class="sidebar-title">📋 All Games A–Z</div>
-      <div class="sidebar-search">
-        <input type="search" id="sidebarSearch" placeholder="Filter…" autocomplete="off">
-      </div>
-      <div class="sidebar-list" id="sidebarList"><a title="Smash Karts">Smash Karts</a><a title="Moto X3M">Moto X3M</a><a title="Slope 2">Slope 2</a><a title="Slope Tunnel">Slope Tunnel</a><a title="Smash Cars!">Smash Cars!</a><a title="Random Game (Multi-Game Menu Picker)">Random Game (Multi-Game Menu Picker)</a><a title="1Line">1Line</a></div>
-    </div>
-  </aside>
-
-  <main>
-    <div id="featured">
-      <div class="section-title">⭐ Featured Games</div>
-      <div class="featured-grid" id="featuredGrid"><div class="game-card">
-    <img src="https://googleusercontent.com" alt="Run 3" loading="lazy" onerror="this.style.display='none'" style="display: none;">
-    <div class="game-card-body">
-      <div class="game-card-name">Run 3</div>
-      <div class="game-card-play">▶ Play Now</div>
-    </div></div><div class="game-card">
-    <img src="https://googleusercontent.com" alt="Smash Karts" loading="lazy" onerror="this.style.display='none'" style="display: none;">
-    <div class="game-card-body">
-      <div class="game-card-name">Smash Karts</div>
-      <div class="game-card-play">▶ Play Now</div>
-    </div></div><div class="game-card">
-    <img src="https://googleusercontent.com" alt="Moto X3M" loading="lazy" onerror="this.style.display='none'" style="display: none;">
-    <div class="game-card-body">
-      <div class="game-card-name">Moto X3M</div>
-      <div class="game-card-play">▶ Play Now</div>
-    </div></div></div>
     </div>
 
-    <div id="all-games" class="az-section">
-      <div class="section-title">🎯 All Games A–Z</div>
-      <div id="noResults" style="display:none;text-align:center;padding:48px;color:var(--muted)">No games found.</div>
-      <div id="azContainer"><div class="letter-group"><div class="letter-heading">#</div><div class="az-grid"><div class="az-link" title="1Line">1Line</div></div></div><div class="letter-group"><div class="letter-heading">M</div><div class="az-grid"><div class="az-link" title="Moto X3M">Moto X3M</div></div></div><div class="letter-group"><div class="letter-heading">R</div><div class="az-grid"><div class="az-link" title="Random Game (Multi-Game Menu Picker)">Random Game (Multi-Game Menu Picker)</div></div></div><div class="letter-group"><div class="letter-heading">S</div><div class="az-grid"><div class="az-link" title="Smash Karts">Smash Karts</div><div class="az-link" title="Slope 2">Slope 2</div><div class="az-link" title="Slope Tunnel">Slope Tunnel</div><div class="az-link" title="Smash Cars!">Smash Cars!</div></div></div></div>
-    </div>
+    <script>
+        function closeWindow() {
+            window.close();
+            setTimeout(() => {
+                document.body.innerHTML = '<div style="font-family:sans-serif; text-align:center; padding:50px; color:#666;"><h3>You can now close this tab.</h3></div>';
+            }, 100);
+        }
+    </script>
 
-    <div class="about-box">
-      <h2>Welcome to Classroom 6x Unblocked Games</h2>
-      <p>Looking for the perfect spot to play free online games during your school breaks? You've found it. <strong>Classroom 6x</strong> offers a massive collection of safe, school-friendly web games designed for students.</p>
-      <p><strong>Chromebook &amp; School Network Ready:</strong> Games open in a clean about:blank window so filters see nothing to block.</p>
-      <p><strong>No Downloads Needed:</strong> Everything runs directly in your browser — no installs, no plugins.</p>
-      <p><strong>Endless Variety:</strong> Action, racing, puzzles, sports, idle, and more. There's always something new to play.</p>
-      <p>Enjoy your breaks responsibly — education always comes first! 🎓</p>
-    </div>
-  </main>
-</div>
-
-<footer>
-  <p>✔️ Classroom 6x Unblocked Games 2026 &nbsp;|&nbsp;
-    <a onclick="openGame('https://sites.google.com/view/classroom6x/','Classroom 6x')">Official Site</a> &nbsp;|&nbsp;
-    <a onclick="openGame('https://sites.google.com/view/classroom6x/contact-us','Contact Us')">Contact Us</a>
-  </p>
-  <p style="margin-top:6px;font-size:.72rem">アンブロックゲームズ クラスルーム 6x</p>
-</footer>
-
-<script>
-// ─────────────────────────────────────────────────────────────────────────
-//  ABOUT:BLANK LAUNCHER
-//  Opens a new window at about:blank then writes an iframe into it.
-//  The address bar shows "about:blank" so school filters see no blocked URL.
-// ─────────────────────────────────────────────────────────────────────────
-function openGame(url, name) {
-  const win = window.open('about:blank', '_blank');
-  if (!win) {
-    // popup blocked – fall back to direct tab
-    window.open(url, '_blank');
-    return;
-  }
-  const escaped = name.replace(/'/g, "\\'");
-  win.document.open();
-  win.document.write(
-    '<!DOCTYPE html><html><head>' +
-    '<meta charset="UTF-8">' +
-    '<title>' + escaped + ' \u2013 Classroom 6x</title>' +
-    '<style>' +
-      '*{margin:0;padding:0;box-sizing:border-box}' +
-      'html,body{width:100%;height:100%;background:#0d1f0a;overflow:hidden}' +
-      '#bar{display:flex;align-items:center;gap:10px;background:#152b10;' +
-           'border-bottom:2px solid #2a4f22;padding:6px 14px;height:42px;' +
-           'font-family:Comfortaa,sans-serif;}' +
-      '#bar .back{color:#f1c232;font-size:.85rem;font-weight:700;cursor:pointer;' +
-                  'background:none;border:none;padding:4px 10px;border-radius:6px;}' +
-      '#bar .back:hover{background:#1a3514}' +
-      '#bar .title{color:#9ab890;font-size:.85rem;flex:1;overflow:hidden;' +
-                   'white-space:nowrap;text-overflow:ellipsis}' +
-      '#bar button{background:#1a3514;border:1px solid #2a4f22;color:#9ab890;' +
-                   'padding:4px 12px;border-radius:6px;cursor:pointer;font-size:.8rem;' +
-                   'font-family:Comfortaa,sans-serif}' +
-      '#bar button:hover{background:#22421a;color:#f0f4ee}' +
-      'iframe{display:block;width:100%;height:calc(100% - 42px);border:none}' +
-    '</style></head><body>' +
-    '<div id="bar">' +
-      '<button class="back" onclick="window.close()">&#8592; Close</button>' +
-      '<span class="title">' + escaped + '</span>' +
-      '<button onclick="document.getElementById(\'gf\').requestFullscreen()">&#x26F6; Fullscreen</button>' +
-    '</div>' +
-    '<iframe id="gf" src="' + url + '" allowfullscreen allow="fullscreen *"></iframe>' +
-    '</body></html>'
-  );
-  win.document.close();
-}
-
-// ─────────────────────────────────────────────────────────────────────────
-//  GAME DATA
-// ─────────────────────────────────────────────────────────────────────────
-const BASE = 'https://sites.google.com/view/classroom6x/';
-
-// Featured game data [display name, game url, image url]
-const FEATURED = [
-  ['Run 3', 'https://n-rml3vtupmqkcyeh5r4n66wevgyo4yzbkezxprfa-0lu-script.googleusercontent.com/userCodeAppPanel', 'https://googleusercontent.com']
-];
-
-// All games list — [display name, url/slug]
-const ALL_GAMES = [
-  ['Aim trainer', 'https://Amtr.framer.website'],
-  ['Battle royal 2d', 'https://battleroyalai.netlify.app/'],
-  ['Body drop 3d', 'https://script.google.com/macros/s/AKfycbyXOw6qzM51ssGj_M9IbqU2ecyQivgppEfFXnGRtWv2fa88YqEgVxfE1pA3x-Tf1jfxTA/exec'],
-  ['Bottle flip 3d', 'https://script.google.com/macros/s/AKfycbzwDflD6NVq9iPdEWsRyyI4iqR_k47P-BK4sn_vpYaZGsPJz3zDYRDy45azzYiPnYs/exec'],
-  ['Car driving', 'https://script.google.com/macros/s/AKfycbzQlpr1tIkhRPz587329iVg2MEKG1JuFGIsqoiaxezladgDxbYHMpwNiIUTn_5T16w6/exec'],
-  ['Cars driving 3d', 'https://script.google.com/macros/s/AKfycbzQlpr1tIkhRPz587329iVg2MEKG1JuFGIsqoiaxezladgDxbYHMpwNiIUTn_5T16w6/exec'],
-  ['Free rider 3', 'https://script.google.com/macros/s/AKfycbzglu7bAlCzkY1f7zPl84CsM0ddysxenJzVGRnNn-w3Lt1mQJNIiXViOwdO5Q4M4ztL/exec'],
-  ['Mellon dismounting', 'https://script.google.com/macros/s/AKfycbyZaztSZIRndFCVlGr8WpNLsFW_Hb-R0fowEvqGZxHPi33bSDqjTa4i0jlEnjiVbF-Z/exec'],
-  ['Mellon sandbox', 'https://script.google.com/macros/s/AKfycbygjC3zfZtvLnkZSdN0ZYEX2u1ZGEKeW6fP2y2SC0cJBvYVq7f_wZGbgbrFaq0iUhcNsA/exec'],
-  ['Moto xm3', 'https://script.google.com/macros/s/AKfycbzv1h8PLdH7WouQ0T09hlcWifgJGTCYkrIKf1urYncfCcdm-F9sYZ4ex-U6Vp0tVHnI4g/exec'],
-  ['Poly track', 'https://smapskajendfjshwbekf-prog.github.io/newcargame/'],
-  ['Rocket goal', 'https://script.google.com/macros/s/AKfycbybZkVPGyvHUOZbwrJSn5fRQIFcGpoIEhp0r-yq2GWRtE_1G7YzP4t8kPZRfp6tutUN/exec'],
-  ['Run 3', 'https://n-rml3vtupmqkcyeh5r4n66wevgyo4yzbkezxprfa-0lu-script.googleusercontent.com/userCodeAppPanel'],
-  ['Slope 2', 'https://script.google.com/macros/s/AKfycbx2OBzjQ_8DtRyLr7oQcM9ouzkjy8bBoXAA0uJjNVcc7hfnqhJzE2wUT2I9kcvI5qCz5g/exec'],
-  ['Smash carts', 'https://script.google.com/macros/s/AKfycbyE1C_kxeomVoOLjpaXc2uAI7JdNgVhdQdePTZu9Sizwzj_imhaWnNmPSXm4w1v-SFs/exec'],
-  ['Snake puzzle', 'https://script.google.com/macros/s/AKfycbymKWcUrgUql0KiwDqccDBMbYJB8_gxtlKCbQ5C6lfGB90kOJh4MpLqhMGWjtF7TyBskw/exec'],
-  ['Snow rider', 'https://script.google.com/macros/s/AKfycbw5Z-Ryg_JfIIDYH7pzzPKXlr2tN0HCw-tT_ZvxBGDPsDDY41ewPVneVeLzelfpnBab/exec'],
-  ['Speed stars', 'https://epicfreegames78.github.io/speed-stars/'],
-  ['Tetris', 'https://tetris-game.framer.website/']
-];
-
-// Fallback logic if openGame execution handler isn't defined inside your project yet
-if (typeof openGame !== 'function') {
-  function openGame(url, name) {
-    console.log(`Opening game: ${name}`);
-    window.open(url, '_blank');
-  }
-}
-
-// ─────────────────────────────────────────────────────────────────────────
-//  RENDER FEATURED GRID
-// ─────────────────────────────────────────────────────────────────────────
-const fg = document.getElementById('featuredGrid');
-if (fg) {
-  FEATURED.forEach(([name, target, img]) => {
-    const card = document.createElement('div');
-    card.className = 'game-card';
-    card.innerHTML = `
-      <img src="${img}" alt="${name}" loading="lazy" onerror="this.style.display='none'">
-      <div class="game-card-body">
-        <div class="game-card-name">${name}</div>
-        <div class="game-card-play">▶ Play Now</div>
-      </div>`;
-    
-    card.addEventListener('click', () => openGame(target, name));
-    fg.appendChild(card);
-  });
-}
-
-// ─────────────────────────────────────────────────────────────────────────
-//  RENDER A-Z CONTAINER
-// ─────────────────────────────────────────────────────────────────────────
-function buildAZ(games) {
-  const container = document.getElementById('azContainer');
-  if (!container) return;
-  container.innerHTML = '';
-  
-  if (!games.length) {
-    const noResults = document.getElementById('noResults');
-    if (noResults) noResults.style.display = 'block';
-    return;
-  }
-  
-  const noResults = document.getElementById('noResults');
-  if (noResults) noResults.style.display = 'none';
-
-  const groups = {};
-  games.forEach(([name, target]) => {
-    // Corrected character extraction to group accurately under single letters
-    const firstChar = name.trim().charAt(0);
-    const key = /^[A-Za-z]/.test(firstChar) ? firstChar.toUpperCase() : '#';
-    if (!groups[key]) groups[key] = [];
-    groups[key].push([name, target]);
-  });
-
-  Object.keys(groups).sort().forEach(letter => {
-    const section = document.createElement('div');
-    section.className = 'letter-group';
-    
-    const heading = document.createElement('div');
-    heading.className = 'letter-heading';
-    heading.textContent = letter;
-    section.appendChild(heading);
-    
-    const grid = document.createElement('div');
-    grid.className = 'az-grid';
-    
-    groups[letter].sort((a, b) => a[0].localeCompare(b[0])).forEach(([name, target]) => {
-      const a = document.createElement('div');
-      a.className = 'az-link';
-      a.textContent = name;
-      a.title = name;
-      
-      a.addEventListener('click', () => openGame(target, name));
-      grid.appendChild(a);
-    });
-    
-    section.appendChild(grid);
-    container.appendChild(section);
-  });
-}
-
-// ─────────────────────────────────────────────────────────────────────────
-//  RENDER SIDEBAR
-// ─────────────────────────────────────────────────────────────────────────
-function buildSidebar(games) {
-  const list = document.getElementById('sidebarList');
-  if (!list) return;
-  list.innerHTML = '';
-  
-  games.forEach(([name, target]) => {
-    const a = document.createElement('div');
-    a.className = 'sidebar-list';
-    const link = document.createElement('a');
-    link.textContent = name;
-    link.title = name;
-    
-    link.addEventListener('click', () => openGame(target, name));
-    list.appendChild(link);
-  });
-}
-
-// Initial script execution
-buildAZ(ALL_GAMES);
-buildSidebar(ALL_GAMES);
-
-// ─────────────────────────────────────────────────────────────────────────
-//  SEARCH FILTERS
-// ─────────────────────────────────────────────────────────────────────────
-function doSearch(q) {
-  const ql = q.toLowerCase();
-  const filtered = ql ? ALL_GAMES.filter(([n]) => n.toLowerCase().includes(ql)) : ALL_GAMES;
-  buildAZ(filtered);
-  buildSidebar(filtered);
-  
-  document.querySelectorAll('.game-card').forEach(card => {
-    const nmEl = card.querySelector('.game-card-name');
-    if (nmEl) {
-      const nm = nmEl.textContent.toLowerCase();
-      card.style.display = (!ql || nm.includes(ql)) ? '' : 'none';
-    }
-  });
-}
-
-const mainSearch = document.getElementById('mainSearch');
-if (mainSearch) {
-  mainSearch.addEventListener('input', e => doSearch(e.target.value.trim()));
-}
-
-const sidebarSearch = document.getElementById('sidebarSearch');
-if (sidebarSearch) {
-  sidebarSearch.addEventListener('input', e => {
-    const ql = e.target.value.trim().toLowerCase();
-    const filtered = ql ? ALL_GAMES.filter(([n]) => n.toLowerCase().includes(ql)) : ALL_GAMES;
-    buildSidebar(filtered);
-  });
-}
-</script>
 </body>
 </html>
